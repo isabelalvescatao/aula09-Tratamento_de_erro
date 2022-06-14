@@ -78,7 +78,7 @@ double definirResultadoDaUltimaOperacaoMatematica()
     }
     else
     {
-        Console.WriteLine("Você digitou um valor inválido. Por favor, tente novamente");
+        Console.WriteLine("Opção invalida. Por favor, tente novamente\n\n");
         return resultado;
     }
 }
@@ -86,5 +86,13 @@ double definirResultadoDaUltimaOperacaoMatematica()
 bool a = true;
 while(a = true)
 {
-    definirResultadoDaUltimaOperacaoMatematica();
+    try
+    {
+        definirResultadoDaUltimaOperacaoMatematica();
+    }
+    catch
+    {
+        Console.WriteLine($"*** O VALOR É INVALIDO, TENTE NOVAMENTE! ***\n\n");
+    }
+
 }
