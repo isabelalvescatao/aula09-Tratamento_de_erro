@@ -63,11 +63,25 @@ double definirResultadoDaUltimaOperacaoMatematica()
     }
     else if (operacao == 4)
     {
+
         Console.WriteLine("Você digitou 4 - Dividir\nPor qual valor deseja dividir?");
         double valor = double.Parse(Console.ReadLine());
-        resultado = dividirValor(valor);
-        Console.WriteLine($"O resultado é: {resultado}\n\n");
+        
+        if (valor != 0)
+        {
+            resultado = dividirValor(valor);
+            Console.WriteLine($"O resultado é: {resultado}\n\n");
+            return resultado;
+        }
+        else
+        {
+            Console.WriteLine("Não é possivel dividir por ZERO\n\n");
+            return resultado;
+        }
+
         return resultado;
+
+
     }
     else if (operacao == 5)
     {
@@ -89,10 +103,10 @@ while(a = true)
     try
     {
         definirResultadoDaUltimaOperacaoMatematica();
-    }
+}
     catch
-    {
-        Console.WriteLine($"*** O VALOR É INVALIDO, TENTE NOVAMENTE! ***\n\n");
-    }
+{
+    Console.WriteLine($"*** O VALOR É INVALIDO, TENTE NOVAMENTE! ***\n\n");
+}
 
 }
